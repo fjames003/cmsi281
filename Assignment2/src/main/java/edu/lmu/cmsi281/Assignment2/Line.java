@@ -7,6 +7,10 @@ public class Line {
 
     public Line(Point one, Point two) {
 
+        if ( one.isEqualTo(two) ) {
+            throw new IllegalArgumentException("Lines must contain two DIFFERENT points");
+        } 
+              
         this.endOne = one;
         this.endTwo = two;
 

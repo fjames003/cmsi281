@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="0" name="edu.lmu.cmsi281.Assignment2.LineTest" time="0.003" errors="0" skipped="0">
+<testsuite tests="9" failures="0" name="edu.lmu.cmsi281.Assignment2.LineTest" time="0.005" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/local/java/jdk1.8.0_20/jre/lib/amd64"/>
@@ -59,12 +59,13 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="edu.lmu.cmsi281.Assignment2.LineTest" name="lineIsEqualToTest" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.Assignment2.LineTest" name="lineIsEqualToTest" time="0.001"/>
   <testcase classname="edu.lmu.cmsi281.Assignment2.LineTest" name="lineIsNotEqualToTest" time="0"/>
-  <testcase classname="edu.lmu.cmsi281.Assignment2.LineTest" name="line2LengthTest" time="0.001"/>
+  <testcase classname="edu.lmu.cmsi281.Assignment2.LineTest" name="line2LengthTest" time="0"/>
   <testcase classname="edu.lmu.cmsi281.Assignment2.LineTest" name="lineLengthTest" time="0"/>
   <testcase classname="edu.lmu.cmsi281.Assignment2.LineTest" name="lineNoIntersect" time="0"/>
   <testcase classname="edu.lmu.cmsi281.Assignment2.LineTest" name="lineMidPointXTest" time="0"/>
   <testcase classname="edu.lmu.cmsi281.Assignment2.LineTest" name="lineMidPointYTest" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.Assignment2.LineTest" name="lineSamePointTest" time="0"/>
   <testcase classname="edu.lmu.cmsi281.Assignment2.LineTest" name="lineDoIntersect" time="0"/>
 </testsuite>

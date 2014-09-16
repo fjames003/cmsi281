@@ -22,6 +22,11 @@ public class LineTest {
         this.four = new Point(2,2);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void lineSamePointTest() {
+        Line ln = new Line(this.one, this.one);
+    }
+
     @Test
     public void lineLengthTest() {
         Line ln = new Line(this.one, this.two);
