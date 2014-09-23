@@ -1,7 +1,7 @@
-###             Homework Assignment 2
+#             Homework Assignment 2
 ##                      By: Frankie James
 
-#The Build
+###The Build
     First off this was quite a challenging build. Not only
     did it take ample time to complete but some of the 
     tests needed were rather tricky. That being said I 
@@ -14,14 +14,14 @@
     heart and soul of Assingment2 and the shapes are just the 
     resulting product of those key classes.
 
-#Point Class
+###Point Class
     For my Point I created all of the required methods and 
     tested them although I did add a toString() method as well
     that was also tested. Additionally for practical reasons in
     righting my shapes I included getX() and getY() methods to be 
     used in other classes. All tests are passing.
 
-#Line Class
+###Line Class
     I decided that my Line would consist of 
     two Points essentially so that many of the 
     methods needed for Line could just use already
@@ -33,7 +33,7 @@
     products and tried to comment through what each step
     was doing. All tests for Line are also passing.
 
-#Circle
+###Circle
     The Circle class was actually the easiest of all the shapes.
     This was becuase a Circle only requires a cnter Point and 
     a radius. I tested things like whether the radius with the 
@@ -50,7 +50,7 @@
     containsPoint() methods work because those tests also passed. All in all
     I get nearly everything for Circle working except possibly translate().
 
-#Rectangle
+###Rectangle
     The Rectangle class is when things really started getting more difficult.
     In order to validate whether the rectangle was actually a rectangle, meaning
     it had two pairs of sides with equal lengths, I first made sure there were no 
@@ -68,7 +68,7 @@
     I also tested. And Again all tests were passing except the translate method for aformentioned
     reasons.
 
-#Square
+###Square
     For the Square Class I stole the childhood saying that a Square is
     a Rectangle but a rectangle is not a Square. So my Square steals a lot
     of functionality from Rectangle because it was already tested and they 
@@ -78,7 +78,7 @@
     is because all the arguments are run through Rectangle which is tested in that manner.
     The only test failure for Square is again the translate Test.
 
-#Right Triangle
+###Right Triangle
     The Right Triangle actually proved to be the most challenging and the only 
     class in which all required methods were not complete. This is because two methods
     proved to be challenging. First the containsPoint() was very hard and I actaully found
