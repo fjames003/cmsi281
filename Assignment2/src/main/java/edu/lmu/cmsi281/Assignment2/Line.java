@@ -7,7 +7,7 @@ public class Line {
 
     public Line(Point one, Point two) {
 
-        if ( one.isEqualTo(two) || one == null || two == null ) {
+        if ( one == null || two == null || one.isEqualTo(two) ) {
             throw new IllegalArgumentException("Lines must contain two DIFFERENT points");
         } 
               

@@ -13,6 +13,7 @@ public class LineTest {
     private Point two;
     private Point three;
     private Point four;
+    private Point isNull;
 
     @Before
     public void initialize() {
@@ -20,6 +21,12 @@ public class LineTest {
         this.two = new Point(0,2);
         this.three = new Point(2,0);
         this.four = new Point(2,2);
+        this.isNull = null;
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void nullPointTest() {
+        Line ln = new Line(this.one, this.isNull);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -78,4 +85,6 @@ public class LineTest {
         Line ln1 = new Line(this.two, this.four);
         assertEquals("failure - thought lines intersect", true, ln.intersects(ln1));
     }
+
+   //test
 }

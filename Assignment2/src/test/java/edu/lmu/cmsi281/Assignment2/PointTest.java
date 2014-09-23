@@ -78,6 +78,6 @@ public class PointTest {
     public void pointIsEqualToReversedTest() {
         Point p = new Point(37.4567,89.0987);
         Point p1 = new Point(37.4567,89.0987);
-        assertEquals("failure - should've thought points were equal", true, p.isEqualTo(p1));
+        assertEquals("failure - should've thought points were equal", true, p1.isEqualTo(p));
     }
 }

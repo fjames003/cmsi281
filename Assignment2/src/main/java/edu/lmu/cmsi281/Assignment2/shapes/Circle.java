@@ -2,6 +2,7 @@ package edu.lmu.cmsi281.Assignment2.shapes;
 
 import edu.lmu.cmsi281.Assignment2.Point;
 import edu.lmu.cmsi281.Assignment2.Line;
+import edu.lmu.cmsi281.Assignment2.shapes.Rectangle;
 
 public class Circle {
     private Point center;
@@ -39,14 +40,19 @@ public class Circle {
         return p.getX() <= (this.center.getX() + this.radius) && p.getY() <= (this.center.getY() + this.radius);
     }
     public void translate(double xDir, double yDir) {
-        if (((this.center.getX() - this.radius) - xDir) < 0 || ((this.center.getY() - this.radius) - yDir) < 0) {
+        if (((this.center.getX() + xDir) - radius) < 0 || ((this.center.getY() + yDir) - this.radius) < 0) {
             throw new IllegalArgumentException("Cannot translate circle into negative values");
         } else {
-            Point result = new Point(this.center.getX() + xDir, this.center.getY() + yDir);
-            this.center = result;
+            this.center = new Point((this.center.getX() + xDir), (this.center.getY() + yDir));
         }
     }
-    public void getRectangle() {
+   
+    public Rectangle getRectangle() {
+        Point one = new Point(this.center.getX() + this.radius, this.center.getY() + this.radius);
+        Point two = new Point(this.center.getX() - this.radius, this.center.getY() + this.radius);
+        Point three = new Point(this.center.getX() - this.radius, this.center.getY() - this.radius);
+        Point four = new Point(this.center.getX() + this.radius, this. center.getY() - this.radius);
 
+        return new Rectangle(one, two, three, four);
     }
 }
