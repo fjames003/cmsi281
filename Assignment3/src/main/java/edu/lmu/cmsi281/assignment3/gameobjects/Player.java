@@ -9,19 +9,18 @@ public class Player extends MovableObject {
 
   public Player(int x, int y) {
     super(x, y, 0.5);
-    this.renderedCharacter = 'p';
+    this.setRenderedCharacter('p');
   }
 
+  // Only worried about colliding with NON Players
+  // Will not collide with other Players (Players vs. Everyone)
   @Override
-  public char getRenderedCharacter() {
-    return this.renderedCharacter;
-  }
-
-  @Override
-  protected void newHit(double percent) {
-    Random rand = new Random();
-    if (rand.nextDouble() <= percent) {
-      this.newHit();
-    }
+  protected void newHit(MovableObject m) {
+    //if (!(m instanceof Player)) {
+      Random rand = new Random();
+      if (rand.nextDouble() <= m.getHitPercent()) {
+        this.newHit();
+      }
+    //}
   }
 }

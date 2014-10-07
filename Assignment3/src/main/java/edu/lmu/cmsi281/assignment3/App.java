@@ -10,10 +10,21 @@ public class App {
   private GameEngine engine;
 
   public App() {
-    System.out.println("Welcome to Frankie's Game");
-    System.out.println("Commands are: [N]ext frame, [Q]uit, [D]isplacement Randomization, [A]dvance given number of frames");
+    System.out.println("\nWelcome to Frankie's Game" + "\n=========================");
+    System.out.println("How large of a game board? (15-100)");
     this.keyboard = new Scanner(System.in);
-    this.engine = new GameEngine(15);
+    int size = this.getSize();
+    this.engine = new GameEngine(size);
+
+    System.out.println("=========================" + 
+      "\nCommands are:" +
+      "\n[N]ext frame," + 
+      "\n[Q]uit," + 
+      "\n[D]isplacement Randomization," + 
+      "\n[A]dvance given number of frames");
+
+    
+    
   }
 
   /*
@@ -21,6 +32,21 @@ public class App {
    */
   private String getInput() {
     return this.keyboard.next().toLowerCase();
+  }
+
+  private int getSize() {
+    try {
+      int size = this.keyboard.nextInt();
+      if (size > 100 || size < 15) {
+        System.out.println("Input recieved was not a valid number - Default of 15 used");
+        return 15;
+      } else {
+        return size;
+      }
+    } catch (Exception e) {
+      System.out.println("Input recieved was not a valid number - Default of 15 used");
+      return 15;
+    }
   }
 
   private int getNumber() {

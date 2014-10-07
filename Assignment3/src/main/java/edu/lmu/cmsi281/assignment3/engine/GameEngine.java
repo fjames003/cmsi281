@@ -163,7 +163,7 @@ public class GameEngine {
         }
         for (int x = 0; x < this.movables.length; x++) {
           for (int y = 0; y < this.movables[x].length; y++) {
-              if (x != i && y != j) {
+              if (!(x == i && y == j)) {
                 this.movables[i][j].checkCollision(this.movables[x][y]);
               }
           }
