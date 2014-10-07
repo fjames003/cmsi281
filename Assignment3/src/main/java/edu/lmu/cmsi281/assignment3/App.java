@@ -13,12 +13,7 @@ public class App {
     System.out.println("\nWelcome to Frankie's Game");
     
 
-    System.out.println("=========================" + 
-      "\nCommands are:" +
-      "\n[N]ext frame," + 
-      "\n[Q]uit," + 
-      "\n[D]isplacement Randomization," + 
-      "\n[A]dvance given number of frames");
+    showCommands();
 
     System.out.println("========================="+ "\nHow large of a game board? (15-100)");
     this.keyboard = new Scanner(System.in);
@@ -90,6 +85,8 @@ public class App {
               theApp.engine.update();
             }
           }
+      } else if (input.equals("h")) {
+        showCommands();
       }
 
       input = theApp.getInput();
@@ -103,5 +100,15 @@ public class App {
       try {
         System.in.read();
       } catch (Exception e) {}
+  }
+
+  private static void showCommands() {
+    System.out.println("=========================" + 
+      "\nCommands are:" +
+      "\n[N]ext frame," + 
+      "\n[Q]uit," + 
+      "\n[D]isplacement Randomization," + 
+      "\n[A]dvance given number of frames" +
+      "\n[H]elp: Display commands");
   }
 }

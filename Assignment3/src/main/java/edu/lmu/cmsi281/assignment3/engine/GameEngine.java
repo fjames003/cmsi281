@@ -10,6 +10,8 @@ import edu.lmu.cmsi281.assignment3.gameobjects.Boss;
 import edu.lmu.cmsi281.assignment3.core.GameObject;
 import edu.lmu.cmsi281.assignment3.core.MovableObject;
 
+import java.util.Random;
+
 public class GameEngine {
 
   private int frame;
@@ -30,31 +32,10 @@ public class GameEngine {
     this.frame = 0;
     this.size = size;
 
-    // do this in a separate method to keep the constructor clean
+    // Do all objects in seperate methods
+    // to keep constructor clean
     this.createWalls();
-
-    this.movables[0] = new Player[1];
-    this.movables[1] = new Monster[4];
-    this.movables[2] = new Boss[2];
-
-    this.notMovables[1] = new Rock[2];
-    this.notMovables[2] = new Tree[2];
-
-    this.movables[0][0] = new Player(3, 4);
-    
-    this.movables[1][0] = new Monster(4, 3, 'z');
-    this.movables[1][1] = new Monster(2, 4, 'a');
-    this.movables[1][2] = new Monster(8, 13,'x');
-    this.movables[1][3] = new Monster(1, 1, 's');
-    
-    this.movables[2][0] = new Boss(4, 4, 'o');
-    this.movables[2][1] = new Boss(2, 2, 'k');
-    
-    this.notMovables[1][0] = new Rock(3,8);
-    this.notMovables[1][1] = new Rock(8,4);
-    
-    this.notMovables[2][0] = new Tree(8,9);
-    this.notMovables[2][1] = new Tree(7,12);
+    this.createPieces();
   }
 
   private void createWalls() {
@@ -181,5 +162,59 @@ public class GameEngine {
     }
     
     System.out.println("\nDisplacements have been Randomized\n" +newLine);
+  }
+
+  private void createPieces() {
+    GameObject[][] board = new GameObject[this.size - 1][this.size - 1];
+    Random rand = new Random();
+    this.movables[0] = new Player[this.size / 15];
+    this.movables[1] = new Monster[4];
+    this.movables[2] = new Boss[2];
+
+    char[] monsterTypes = new char[] {'z', 'x', 'a', 's'};
+    char[] bossTypes = new char[] {'o', 'k'};
+
+    int monsterCount= 0;
+    int bossCount = 0;
+
+    this.notMovables[1] = new Rock[(this.size / 10) + 1];
+    this.notMovables[2] = new Tree[(this.size / 10) + 1];
+
+    int x, y;
+    for (int i = 0; i < this.movables.length; i++) {
+      for (int j = 0; j < this.movables[i].length; j++) {
+        x = rand.nextInt(this.size - 2) + 1;
+        y = rand.nextInt(this.size - 2) + 1;
+        while (board[x][y] != null) {
+          x = rand.nextInt(this.size - 2) + 1;
+          y = rand.nextInt(this.size - 2) + 1;
+        }
+        if (i == 0) {
+          this.movables[i][j] = new Player(x, y);
+        } else if (i == 1) {
+          this.movables[i][j] = new Monster(x, y, monsterTypes[monsterCount]);
+          monsterCount++;
+        } else {
+          this.movables[i][j] = new Boss(x, y, bossTypes[bossCount]);
+          bossCount++;
+        }
+      }
+    }
+
+    for (int i = 1; i < this.notMovables.length; i++) {
+      for (int j = 0; j < this.notMovables[i].length; j++) {
+        x = rand.nextInt(this.size - 2) + 1;
+        y = rand.nextInt(this.size - 2) + 1;
+        while (board[x][i] != null) {
+          x = rand.nextInt(this.size - 2) + 1;
+          y = rand.nextInt(this.size - 2) + 1;
+        }
+        if (i == 1) {
+          this.notMovables[i][j] = new Rock(x, y);
+        } else {
+          this.notMovables[i][j] = new Tree(x, y);
+        }
+      }
+    }
   }
 }
