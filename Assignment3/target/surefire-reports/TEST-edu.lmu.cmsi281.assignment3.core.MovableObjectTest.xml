@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="15" failures="0" name="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" time="0.011" errors="0" skipped="0">
+<testsuite tests="15" failures="0" name="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" time="0.018" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/local/java/jdk1.8.0_20/jre/lib/amd64"/>
@@ -60,19 +60,19 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkPlayerWallCollision" time="0.004"/>
+  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkPlayerWallCollision" time="0.006"/>
   <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="movableGameObjectMovement" time="0"/>
   <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="printHitsTest" time="0"/>
-  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="testHits" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="testHits" time="0.001"/>
   <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkMonster_ZX_BossCollision" time="0.001"/>
-  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="badLocation" time="0.001"/>
+  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="badLocation" time="0"/>
   <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkMonster_AS_BossCollision" time="0.001"/>
-  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkMonster_ZX_PlayerCollision" time="0.002"/>
-  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkBossPlayerCollision" time="0"/>
-  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkPlayerMonster_ZX_Collision" time="0.002"/>
+  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkMonster_ZX_PlayerCollision" time="0.004"/>
+  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkBossPlayerCollision" time="0.002"/>
+  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkPlayerMonster_ZX_Collision" time="0.001"/>
   <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkPlayerRockCollision" time="0"/>
-  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkPlayerBossCollision" time="0"/>
-  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkMonster_AS_PlayerCollision" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkPlayerBossCollision" time="0.001"/>
+  <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkMonster_AS_PlayerCollision" time="0.001"/>
   <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkPlayerMonster_AS_Collision" time="0"/>
   <testcase classname="edu.lmu.cmsi281.assignment3.core.MovableObjectTest" name="checkPlayerTreeCollision" time="0"/>
 </testsuite>

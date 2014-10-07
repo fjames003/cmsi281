@@ -17,7 +17,7 @@ public class GameEngine {
   private int frame;
   private int size;
 
-  private String newLine = "=========================";
+  private static final String NEW_LINE = "=========================";
 
   // Game Objects
 
@@ -90,7 +90,7 @@ public class GameEngine {
       }
     }
 
-    System.out.println(this.newLine);
+    System.out.println(this.NEW_LINE);
     System.out.println("Frame: " + this.frame);  // book keeping
 
     for (int row = 0; row < renderedWorld.length; row++) {
@@ -106,7 +106,7 @@ public class GameEngine {
       System.out.println(""); // print a new line between each scene
     }
 
-    System.out.println(this.newLine);
+    System.out.println(this.NEW_LINE);
 
     //Print Hits for Moving Objects
     System.out.println("Hits:");
@@ -115,7 +115,7 @@ public class GameEngine {
         System.out.println(this.movables[i][j].printHits());
       }
     }
-    System.out.println(this.newLine);
+    System.out.println(this.NEW_LINE);
   }
 
   //Have all moving objects update themselves
@@ -161,25 +161,40 @@ public class GameEngine {
       }
     }
     
-    System.out.println("\nDisplacements have been Randomized\n" +newLine);
+    System.out.println("\nDisplacements have been Randomized\n" +NEW_LINE);
   }
 
+  /* Create a Gameobject 2-dimensional array to
+   * to proxy the real board but with dimensions one
+   * less to avoid problems with walls. All types of
+   * characters are in equal distribution (i.e. there can
+   * on be 4, 8, 12 monsters on the board)
+   */
   private void createPieces() {
     GameObject[][] board = new GameObject[this.size - 1][this.size - 1];
     Random rand = new Random();
+    // One Player every 15 squares, and 4 monsters per player
+    // as well as 2 bosses per player. [all types in equal proportions]
     this.movables[0] = new Player[this.size / 15];
-    this.movables[1] = new Monster[4];
-    this.movables[2] = new Boss[2];
+    this.movables[1] = new Monster[4 * this.movables[0].length];
+    this.movables[2] = new Boss[2 * this.movables[0].length];
 
     char[] monsterTypes = new char[] {'z', 'x', 'a', 's'};
     char[] bossTypes = new char[] {'o', 'k'};
 
-    int monsterCount= 0;
-    int bossCount = 0;
+    
 
+    // 2 Rocks and 2 Trees per 10 game squares
     this.notMovables[1] = new Rock[(this.size / 10) + 1];
     this.notMovables[2] = new Tree[(this.size / 10) + 1];
 
+    // Set all Movable objects to x and y values
+    // randomly generated only if x an y dont equal a
+    // taken space on the board (must equal null)
+    // If making monsters or Bosses increase the count
+    // and then reset as to equally proportion characters
+    int monsterCount = 0;
+    int bossCount = 0;
     int x, y;
     for (int i = 0; i < this.movables.length; i++) {
       for (int j = 0; j < this.movables[i].length; j++) {
@@ -191,16 +206,22 @@ public class GameEngine {
         }
         if (i == 0) {
           this.movables[i][j] = new Player(x, y);
+          board[x][j] = this.movables[i][j];
         } else if (i == 1) {
           this.movables[i][j] = new Monster(x, y, monsterTypes[monsterCount]);
-          monsterCount++;
+          board[x][j] = this.movables[i][j];
+          monsterCount = (monsterCount == monsterTypes.length - 1) ? 0 : monsterCount + 1;
         } else {
           this.movables[i][j] = new Boss(x, y, bossTypes[bossCount]);
-          bossCount++;
+          board[x][j] = this.movables[i][j];
+          bossCount = (bossCount == bossTypes.length - 1) ? 0 : bossCount + 1;
         }
       }
     }
 
+    // Set all non-Movable objects to x and y values
+    // randomly generated only if x an y dont equal a
+    // taken space on the board (must equal null)
     for (int i = 1; i < this.notMovables.length; i++) {
       for (int j = 0; j < this.notMovables[i].length; j++) {
         x = rand.nextInt(this.size - 2) + 1;
@@ -211,8 +232,10 @@ public class GameEngine {
         }
         if (i == 1) {
           this.notMovables[i][j] = new Rock(x, y);
+          board[x][j] = this.movables[i][j];
         } else {
           this.notMovables[i][j] = new Tree(x, y);
+          board[x][j] = this.movables[i][j];
         }
       }
     }

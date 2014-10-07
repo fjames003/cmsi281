@@ -12,10 +12,9 @@ public class App {
   public App() {
     System.out.println("\nWelcome to Frankie's Game");
     
-
     showCommands();
 
-    System.out.println("========================="+ "\nHow large of a game board? (15-100)");
+    System.out.println("How large of a game board? (15-100)");
     this.keyboard = new Scanner(System.in);
     int size = this.getSize();
     this.engine = new GameEngine(size);
@@ -103,12 +102,14 @@ public class App {
   }
 
   private static void showCommands() {
-    System.out.println("=========================" + 
+    System.out.println(
+      "=========================" + 
       "\nCommands are:" +
       "\n[N]ext frame," + 
       "\n[Q]uit," + 
       "\n[D]isplacement Randomization," + 
       "\n[A]dvance given number of frames" +
-      "\n[H]elp: Display commands");
+      "\n[H]elp: Display commands" +
+      "\n=========================");
   }
 }
