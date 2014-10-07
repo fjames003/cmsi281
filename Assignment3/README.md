@@ -1,5 +1,5 @@
 # Assignment 3
-⋅⋅⋅ ## By: Frankie James
+⋅ ## By: Frankie James
 
 ### Core
     For the core package in assignment 3 I took your advice and decided 
