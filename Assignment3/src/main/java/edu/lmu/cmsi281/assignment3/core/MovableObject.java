@@ -11,7 +11,7 @@ import java.util.Random;
 // of keeping track of hits and the hit percentage it possesses. 
 public abstract class MovableObject extends GameObject {
 
-    private Displacement displacement;
+    private Displacement displacement = new Displacement(0,0);
     private int hits;
     private double hitPercentage;
 
@@ -56,7 +56,7 @@ public abstract class MovableObject extends GameObject {
                 this.newHit(test);
 
                 //Used to test collisions
-                System.out.println("Collision between: " + this.getRenderedCharacter() + " and " + test.getRenderedCharacter());
+                //System.out.println("Collision between: " + this.getRenderedCharacter() + " and " + test.getRenderedCharacter());
             }
         }
     }
@@ -84,9 +84,14 @@ public abstract class MovableObject extends GameObject {
     // displacement must not be 0.
     public void displacementRandomizer() {
         Random randomGenerator = new Random();
+        Displacement tester = new Displacement(this.displacement.getXDisplacement(), this.displacement.getYDisplacement());
         this.displacement = new Displacement(randomGenerator.nextInt(2) - 1, randomGenerator.nextInt(2) - 1);
         while (this.displacement.getXDisplacement() == 0 && this.displacement.getYDisplacement() == 0) {
             this.displacement = new Displacement(randomGenerator.nextInt(2) - 1, randomGenerator.nextInt(2) - 1);
+        }
+        if (this.displacement.getXDisplacement() == tester.getXDisplacement() &&
+            this.displacement.getYDisplacement() == tester.getYDisplacement()) {
+                this.displacementRandomizer();
         }
     }
 
