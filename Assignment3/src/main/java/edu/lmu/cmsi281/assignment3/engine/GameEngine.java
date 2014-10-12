@@ -185,8 +185,8 @@ public class GameEngine {
     
 
     // 2 Rocks and 2 Trees per 10 game squares
-    this.notMovables[1] = new Rock[(this.size / 10) + 1];
-    this.notMovables[2] = new Tree[(this.size / 10) + 1];
+    this.notMovables[1] = new Rock[(this.size / 10)];
+    this.notMovables[2] = new Tree[(this.size / 10)];
 
     // Set all Movable objects to x and y values
     // randomly generated only if x an y dont equal a
@@ -206,14 +206,14 @@ public class GameEngine {
         }
         if (i == 0) {
           this.movables[i][j] = new Player(x, y);
-          board[x][j] = this.movables[i][j];
+          board[x][y] = this.movables[i][j];
         } else if (i == 1) {
           this.movables[i][j] = new Monster(x, y, monsterTypes[monsterCount]);
-          board[x][j] = this.movables[i][j];
+          board[x][y] = this.movables[i][j];
           monsterCount = (monsterCount == monsterTypes.length - 1) ? 0 : monsterCount + 1;
         } else {
           this.movables[i][j] = new Boss(x, y, bossTypes[bossCount]);
-          board[x][j] = this.movables[i][j];
+          board[x][y] = this.movables[i][j];
           bossCount = (bossCount == bossTypes.length - 1) ? 0 : bossCount + 1;
         }
       }
@@ -226,16 +226,16 @@ public class GameEngine {
       for (int j = 0; j < this.notMovables[i].length; j++) {
         x = rand.nextInt(this.size - 2) + 1;
         y = rand.nextInt(this.size - 2) + 1;
-        while (board[x][i] != null) {
+        while (board[x][y] != null) {
           x = rand.nextInt(this.size - 2) + 1;
           y = rand.nextInt(this.size - 2) + 1;
         }
         if (i == 1) {
           this.notMovables[i][j] = new Rock(x, y);
-          board[x][j] = this.movables[i][j];
+          board[x][y] = this.movables[i][j];
         } else {
           this.notMovables[i][j] = new Tree(x, y);
-          board[x][j] = this.movables[i][j];
+          board[x][y] = this.movables[i][j];
         }
       }
     }
