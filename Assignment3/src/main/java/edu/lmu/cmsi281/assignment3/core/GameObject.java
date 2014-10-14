@@ -2,7 +2,7 @@ package edu.lmu.cmsi281.assignment3.core;
 
 import edu.lmu.cmsi281.assignment3.core.Coordinate;
 
-public abstract class GameObject {
+public class GameObject {
 
     // Defined by having a location on the board  
     // as well as a character that represents it.
@@ -26,10 +26,10 @@ public abstract class GameObject {
         return this.location.getY();
     }
 
-    protected void setX(int x) {
+    public void setX(int x) {
         this.location.setX(x);
     }
-    protected void setY(int y) {
+    public void setY(int y) {
         this.location.setY(y);
     }
 
