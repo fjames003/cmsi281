@@ -10,14 +10,12 @@
     decided to add toString() into Coordinate and Displacement for use later
     on. Other than that those two classes are still the same basic classes.
 
-    * Added into the Core package was an **_abstract_** GameObject class 
+    * Added into the Core package was a GameObject class 
     that will be used for all Game Pieces. This class contains a location
     as well as a rendered character. It has methods to set and get its
-    location values as well as get and set its rendered character. All setters
-    are protected as to only be used by subclasses and classes in the 
-    same package but not used by the world. 
+    location values as well as get and set its rendered character.  
 
-    * The last class in Core is MovableObject, another **_abstract_** class,
+    * The last class in Core is MovableObject, an **_abstract_** class,
     which extends from GameObject. MovableObjects contain everything GameObject 
     did as well as a Displacement, number of hits, and hit percentage. In
     the constructor of MovableObject an x and y value is needed for 
@@ -47,11 +45,8 @@
     one class that you originally had. Although most of it has changed in
     numerous ways now. It still contained an internal frame integer as well
     as a size integer. All objects in the game however are represented in
-    two 2-dimensional arrays; one for non-moving objects and one for moving
+    two 1-dimensional arrays; one for non-moving objects and one for moving
     objects, or in other words objects that need to update and those who don't.
-    Each array has a length of 3 because currently there is only three moving and
-    three non-moving objects created. However if more are added it is only one number
-    for that aspect.
 
     * For the constructor I decided to keep this very clean. I left the createWalls() just
     like it was originally. I had also left the game pieces in static initial positions
@@ -78,7 +73,7 @@
     through for every non-Wall game-piece and assign it an x and y value that haven't been
     used yet. I decided to do one player per 15 squares (App requires a size of 15-100). Then
     there are 4 monsters per player as well as 2 bosses per player. One of each respective type.
-    As for rocks and trees there are 2 each for every 10 squares. This keeps things interesting
+    As for rocks and trees there are 1 each for every 10 squares. This keeps things interesting
     because as the board expands so do the interactions.
 
 ### GameObjects
@@ -115,13 +110,6 @@
     and the objects on it.
 
 ### Future Implementations
-    I would really like to build on this code by first eliminating many of the excess like for
-    example the handfuls of for loops that all look relatively the same. Maybe trying to convert
-    to for each loops so it looks cleaner. Additionally I'm sure I could have made use of interfaces
-    somewhere or another. As I learn more about them I may make use of that functionality. But as of now
-    I feel as if all of my pieces are too related to need interfaces. It is easier at this point
-    to use abstract classes and extend them.
-
     As mentioned earlier on I think it would be interesting to allowing the gameobjects that don't
     move some added abilities. For example trees dying and growing. Players possibly planting trees
     or smashing rocks after rocks have been hit so many times. Similarly I think bosses should be 
