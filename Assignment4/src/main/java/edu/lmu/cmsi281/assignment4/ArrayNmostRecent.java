@@ -1,5 +1,6 @@
 package edu.lmu.cmsi281.assignment4;
 import edu.lmu.cmsi281.assignment4.core.Node;
+import edu.lmu.cmsi281.assignment4.core.MostRecentArrayIterator;
 import java.util.Iterator;
 
 public class ArrayNmostRecent<E> implements Iterable<E> {  

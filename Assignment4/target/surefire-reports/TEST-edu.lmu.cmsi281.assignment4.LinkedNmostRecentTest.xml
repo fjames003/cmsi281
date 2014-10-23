@@ -63,9 +63,9 @@
   <testcase classname="edu.lmu.cmsi281.assignment4.LinkedNmostRecentTest" name="testNewestLessN" time="0.003"/>
   <testcase classname="edu.lmu.cmsi281.assignment4.LinkedNmostRecentTest" name="testNewestMoreN" time="0"/>
   <testcase classname="edu.lmu.cmsi281.assignment4.LinkedNmostRecentTest" name="testOldestLessN" time="0"/>
-  <testcase classname="edu.lmu.cmsi281.assignment4.LinkedNmostRecentTest" name="testOldestMoreN" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.assignment4.LinkedNmostRecentTest" name="testOldestMoreN" time="0.001"/>
   <testcase classname="edu.lmu.cmsi281.assignment4.LinkedNmostRecentTest" name="testSizePostReset" time="0"/>
-  <testcase classname="edu.lmu.cmsi281.assignment4.LinkedNmostRecentTest" name="testSizeLessN" time="0.001"/>
+  <testcase classname="edu.lmu.cmsi281.assignment4.LinkedNmostRecentTest" name="testSizeLessN" time="0"/>
   <testcase classname="edu.lmu.cmsi281.assignment4.LinkedNmostRecentTest" name="testSizeMoreN" time="0"/>
   <testcase classname="edu.lmu.cmsi281.assignment4.LinkedNmostRecentTest" name="testIterator" time="0.001"/>
   <testcase classname="edu.lmu.cmsi281.assignment4.LinkedNmostRecentTest" name="testNullAdd" time="0"/>
