@@ -112,4 +112,14 @@ public class ArrayNmostRecentTest {
     public void testNullAdd() {
         this.list.add(null);
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void testEmptyGetOldest() {
+        this.list.getOldest();
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testEmptyGetRecent() {
+        this.list.getRecent();
+    }
 }

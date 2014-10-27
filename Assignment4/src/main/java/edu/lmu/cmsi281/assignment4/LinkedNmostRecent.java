@@ -1,22 +1,20 @@
 package edu.lmu.cmsi281.assignment4;
 import edu.lmu.cmsi281.assignment4.core.Node;
-import edu.lmu.cmsi281.assignment4.core.MostRecentListIterator;
+import edu.lmu.cmsi281.assignment4.core.iterators.MostRecentListIterator;
+import edu.lmu.cmsi281.assignment4.core.NmostRecent;
 
 import java.util.Iterator;
 
-public class LinkedNmostRecent<E> implements Iterable<E> {  
+public class LinkedNmostRecent<E> extends NmostRecent<E> {  
     private Node<E> head;
     private Node<E> end;
     private int currentItem = 0;
-    private int size;
 
     public LinkedNmostRecent(int size) {
-        if (size < 1) {
-            throw new IllegalArgumentException("List must have a size greater than 0");
-        }
-        this.size = size;
+        super(size);
     }
 
+    @Override
     public void add(E item) {
         if (item == null) {
             throw new IllegalArgumentException("Can't add null items");
@@ -43,6 +41,7 @@ public class LinkedNmostRecent<E> implements Iterable<E> {
         }
     }
 
+    @Override
     public E getOldest() {
         if (this.head == null) {
             throw new IllegalStateException("List is empty");
@@ -50,6 +49,7 @@ public class LinkedNmostRecent<E> implements Iterable<E> {
         return this.head.getValue();
     }
 
+    @Override
     public E getRecent() {
         if (this.end == null) {
             throw new IllegalStateException("List is empty");
@@ -57,10 +57,12 @@ public class LinkedNmostRecent<E> implements Iterable<E> {
         return this.end.getValue();
     }
 
+    @Override
     public int getSize() {
         return this.currentItem;
     }
 
+    @Override
     public void reset() {
         if (this.head != null) {
             Node<E> temp = this.head.getNext();
@@ -75,6 +77,7 @@ public class LinkedNmostRecent<E> implements Iterable<E> {
         }
     }
    
+    @Override
     public Iterator<E> iterator() {
         return new MostRecentListIterator<E>(this.head);
     } 

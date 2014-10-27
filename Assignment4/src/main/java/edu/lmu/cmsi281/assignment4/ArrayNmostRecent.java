@@ -1,21 +1,19 @@
 package edu.lmu.cmsi281.assignment4;
 import edu.lmu.cmsi281.assignment4.core.Node;
-import edu.lmu.cmsi281.assignment4.core.MostRecentArrayIterator;
+import edu.lmu.cmsi281.assignment4.core.iterators.MostRecentArrayIterator;
+import edu.lmu.cmsi281.assignment4.core.NmostRecent;
 import java.util.Iterator;
 
-public class ArrayNmostRecent<E> implements Iterable<E> {  
+public class ArrayNmostRecent<E> extends NmostRecent<E> {  
     private Node<E>[] list;
     private int currentItem = 0;
-    private int size;
 
     public ArrayNmostRecent(int size) {
-        if (size < 1) {
-            throw new IllegalArgumentException("List must have a size greater than 0");
-        }
-        this.size = size;
+        super(size);
         this.list = new Node[this.size];
     }
 
+    @Override
     public void add(E item) {
         if (item == null) {
             throw new IllegalArgumentException("Can't add null items");
@@ -33,6 +31,7 @@ public class ArrayNmostRecent<E> implements Iterable<E> {
         }
     }
 
+    @Override
     public E getOldest() {
         if (this.currentItem == 0) {
             throw new IllegalStateException("List is empty");
@@ -40,6 +39,7 @@ public class ArrayNmostRecent<E> implements Iterable<E> {
         return this.list[0].getValue();
     }
 
+    @Override
     public E getRecent() {
         if (this.currentItem == 0) {
             throw new IllegalStateException("List is empty");
@@ -47,10 +47,12 @@ public class ArrayNmostRecent<E> implements Iterable<E> {
         return this.list[this.currentItem - 1].getValue();
     }
 
+    @Override
     public int getSize() {
         return this.currentItem;
     }
 
+    @Override
     public void reset() {
         if (this.currentItem != 0) {
             for (int i =0; i < currentItem; i++) {
@@ -58,9 +60,10 @@ public class ArrayNmostRecent<E> implements Iterable<E> {
             }
             this.currentItem = 0;
         }
+
     }
-   
     
+    @Override
     public Iterator<E> iterator() {
         return new MostRecentArrayIterator<E>(this.list);
     } 
