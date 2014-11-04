@@ -1,8 +1,8 @@
 package edu.lmu.cmsi281.assignment4;
+
 import edu.lmu.cmsi281.assignment4.core.Node;
 import edu.lmu.cmsi281.assignment4.core.iterators.MostRecentListIterator;
 import edu.lmu.cmsi281.assignment4.core.NmostRecent;
-
 import java.util.Iterator;
 
 public class LinkedNmostRecent<E> extends NmostRecent<E> {  

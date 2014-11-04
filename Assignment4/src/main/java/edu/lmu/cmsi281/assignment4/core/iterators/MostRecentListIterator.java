@@ -4,20 +4,18 @@ import edu.lmu.cmsi281.assignment4.core.Node;
 
 public class MostRecentListIterator<E> implements Iterator<E> {
     private Node<E> head;
-    private Node<E> currentObject;
 
     public MostRecentListIterator(Node<E> start) {
         this.head = start;
-        this.currentObject = this.head;
     }
 
     public E next() {
-        return this.currentObject.getValue();
+        return this.head.getValue();
     }
     public boolean hasNext() {
-        this.currentObject = this.currentObject.getNext();
+        this.head = this.head.getNext();
 
-        return this.currentObject == null;
+        return this.head == null;
     }
 
     public void remove() {
