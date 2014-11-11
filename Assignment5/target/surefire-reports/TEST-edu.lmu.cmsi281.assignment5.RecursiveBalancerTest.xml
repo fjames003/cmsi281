@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="edu.lmu.cmsi281.assignment5.FibonacciTest" time="0.015" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="edu.lmu.cmsi281.assignment5.RecursiveBalancerTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_25\jre\bin"/>
@@ -63,9 +63,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase classname="edu.lmu.cmsi281.assignment5.FibonacciTest" name="fibHundredTest" time="0.015"/>
-  <testcase classname="edu.lmu.cmsi281.assignment5.FibonacciTest" name="fibTenTest" time="0"/>
-  <testcase classname="edu.lmu.cmsi281.assignment5.FibonacciTest" name="fibOneTest" time="0"/>
-  <testcase classname="edu.lmu.cmsi281.assignment5.FibonacciTest" name="fibTwoTest" time="0"/>
-  <testcase classname="edu.lmu.cmsi281.assignment5.FibonacciTest" name="fibZeroTest" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.assignment5.RecursiveBalancerTest" name="intricitmess" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.assignment5.RecursiveBalancerTest" name="notbalnRightWithBracket" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.assignment5.RecursiveBalancerTest" name="withLettersTest" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.assignment5.RecursiveBalancerTest" name="notbalnLeftWithParens" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.assignment5.RecursiveBalancerTest" name="notbalnLeftWithBracket" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.assignment5.RecursiveBalancerTest" name="notbalnRightWithParens" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.assignment5.RecursiveBalancerTest" name="rightNumWrongOrder" time="0"/>
+  <testcase classname="edu.lmu.cmsi281.assignment5.RecursiveBalancerTest" name="webpageExample" time="0"/>
 </testsuite>
