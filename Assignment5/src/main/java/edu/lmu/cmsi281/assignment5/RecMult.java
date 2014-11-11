@@ -1,6 +1,11 @@
 package edu.lmu.cmsi281.assignment5;
 public class RecMult {
-    public int recMult(int a, int b) {
+    public static int recMult(int a, int b) {
+    	if (a > b) {
+    		int temp = b;
+    		b = a;
+    		a = temp;
+    	}
 		if (a == 0) {
 			return 0;
 		} else if (a == 1) {
@@ -9,7 +14,7 @@ public class RecMult {
 			return recMult(a, b, 0);
 		}
 	}
-    private int recMult(int a, int b, int sum) {
+    private static int recMult(int a, int b, int sum) {
         if (a == 1) {
             return sum + b;
         } else {

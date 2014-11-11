@@ -3,10 +3,8 @@ package edu.lmu.cmsi281.assignment5;
 import static edu.lmu.cmsi281.assignment5.FibTail.fibTail;
 
 import org.junit.Test;
-import org.junit.Before;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class FibonacciTest {
     @Test

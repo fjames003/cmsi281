@@ -1,8 +1,8 @@
 package edu.lmu.cmsi281.assignment5;
 import java.util.Stack;
 public class BalancedParens {
-    public boolean balancedParens(String str) {
-		Stack stash = new Stack();
+    public static boolean balancedParens(String str) {
+		Stack<Character> stash = new Stack<Character>();
 		char current;
 		for (int i = 0; i < str.length(); i++) {
 			current = str.charAt(i);
@@ -12,7 +12,13 @@ public class BalancedParens {
 				if (stash.empty()) {
 					return false;
 				} else {
-					stash.pop();
+					if (current == ')' && stash.peek() == '(') {
+						stash.pop();
+					} else if (current == ']' && stash.peek() == '[') {
+						stash.pop();
+					} else {
+						return false;
+					}
 				}
 			}
 		}
