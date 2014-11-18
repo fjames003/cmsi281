@@ -32,4 +32,9 @@ public class RecursiveMultiTest {
    public void timesHundredTest() {
     assertEquals("Does not work with a hundred", 10000, recMult(100, 100));
    }
+
+   @Test(expected = IllegalArgumentException.class)
+   public void negativetest() {
+    recMult(-1, -1);
+   }
 }
