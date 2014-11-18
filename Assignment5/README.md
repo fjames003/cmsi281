@@ -2,7 +2,7 @@
 ##By: Frankie James
 
 ###Recursive Programs
-	##Fibonacci
+#####Fibonacci
 		This was my favorite program to work on. Mostly because of the fact
 		that I just love the Fibonacci sequence so much. That being said, 
 		some of the decisions I made in this program were; I chose to use
@@ -12,14 +12,14 @@
 		Fibonacci indexes. Because these numbers are very long the only type 
 		that could fit them was BigInteger. Long broke at about index 92. Other 
 		than these two things, Fibonacci was a rather easy build.
-	##Multiplication
+#####Multiplication
 		In order to do multiplication without actually doing multiplication I 
 		chose to recursively add the second number to itself for every unit of the
 		first number. So if the first number is 2 and the second is 5, 5 would add to
 		itself twice, 5 + 5 is 10 and the answer. it becomes recursive because you can
 		do the same thing with one less value of the first number. Overall not a lot of 
 		decisions to make and a rather straight forward program.
-	##String to Int Converter
+#####String to Int Converter
 		To convert a string to an int I decided to look at the very first character
 		of the string and then gets its ASCII code, then subtract the ASCII of zero 
 		to get an integer. After doing so it adds to a sum and then returns the
