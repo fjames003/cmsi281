@@ -72,6 +72,7 @@ public class IntegerBinarySearchTree {
       return farthestRight(this.root);
     }
   }
+
   private int farthestRight(BinaryTreeNode root) {
     if (root.getRight() == null) {
       return root.getValue();
@@ -92,6 +93,7 @@ public class IntegerBinarySearchTree {
       return false;
     }
   }
+
   private boolean contains(BinaryTreeNode root, int value) {
     if (root.getValue() == value) {
       return true;
@@ -113,8 +115,6 @@ public class IntegerBinarySearchTree {
    *
    * @return an array of Integers, or empty if the tree is empty.
    */
-
-  
   public Integer[] toPreOrder() {
     if (this.root == null) {
       Integer[] empty = new Integer[0];
@@ -133,7 +133,6 @@ public class IntegerBinarySearchTree {
       toPreOrder(root.getRight(), nums);
     }
     return nums;
-    
   }
 
   /**
